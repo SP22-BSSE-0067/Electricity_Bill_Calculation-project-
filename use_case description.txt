@@ -1,0 +1,9 @@
+Project: Electricity Bill Calculation
+
+Group Members(2):
+Usecase1(Add new meter) by Sadia
+Usecase2 (Cutomer view Info) by Fizza khan,Sadia
+Usecase3(Calculate Bill )by Fizza khan
+
+Calculate Bill:
+Electricity Bill System, admin can hold and responsible to calculate customer bill based on unit consuming data in whole month. This role play a important part to ensuring the error-free billing process for all consumers. Admin can login in the system click on customer calculate bill option in own portal and enter the credentials like meter-no, unit consumption in whole month and then submit details of all users in the bill system. 
