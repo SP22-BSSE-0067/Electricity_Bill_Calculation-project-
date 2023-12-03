@@ -1,0 +1,10 @@
+Add New Meter:
+In this use case, the admin can create a new customer with 
+new meter information assign to the customer, meter information
+ includes a customer name, meter no, address, city, state, email
+ and phone number..
+
+Customer view meter details.
+In this use case, the customer can view all his account information
+ details by login If already have made an account or by sign up via
+ entering the credentials, after the admin has created his meter information.
