@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2023 at 09:32 AM
+-- Generation Time: Dec 23, 2023 at 11:13 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -58,6 +58,15 @@ CREATE TABLE `customer` (
   `ph_no` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customer_id`, `customer_name`, `adress`, `email`, `ph_no`) VALUES
+(1, 'Zaheer-ud-din', 'Nazmabad', 'zaheer234@gmail.com', '0315-675476'),
+(2, 'Anwar Jamel', 'Gulistan-e-johar', 'anwar786@gmail.com', '0345-286754'),
+(3, 'Zeeshan Ahmed', 'Shahra-e-Faisal', 'zeeshan67@gmail.com', '0325-5366357');
+
 -- --------------------------------------------------------
 
 --
@@ -71,6 +80,15 @@ CREATE TABLE `meter_data` (
   `Status` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `meter_data`
+--
+
+INSERT INTO `meter_data` (`Meter_no`, `location`, `installation_date`, `Status`) VALUES
+(23456, '24 main street', '2023-12-03', 'Active'),
+(34567, 'grounfloor, room1', '2023-11-05', 'active'),
+(45678, 'BuldingA ,basement', '2022-12-10', 'Active');
+
 -- --------------------------------------------------------
 
 --
@@ -82,6 +100,20 @@ CREATE TABLE `meter_reading` (
   `Readig_value/units` varchar(45) NOT NULL,
   `Meter_no` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `meter_reading`
+--
+
+INSERT INTO `meter_reading` (`Reading_date`, `Readig_value/units`, `Meter_no`) VALUES
+('0000-00-00', '450', 23456),
+('2023-02-01', '365 ', 34567),
+('0000-00-00', '430', 34567),
+('2023-04-01', '450', 23456),
+('2023-02-01', '365 ', 34567),
+('0000-00-00', '430', 45678),
+('2023-12-01', '98', 45678),
+('2023-06-01', '650', 23456);
 
 --
 -- Indexes for dumped tables
