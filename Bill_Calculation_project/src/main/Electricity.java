@@ -11,12 +11,13 @@ public class Electricity {
 			Connection con =
 			DriverManager.getConnection("jdbc:mysql://localhost:3306/add_new_meter","root","");
 			Statement stmt=con.createStatement();
-			ResultSet rs=stmt.executeQuery("select * from admin");
+			ResultSet rs=stmt.executeQuery("select * from customer inner join meter_data on customer.customer_id = meter_data.Customer_id");
 
 			while(rs.next())
 			{
-			System.out.println("Admin_id: " + rs.getInt(1) + " username: " + rs.getString(2) + " email: "
-			+ rs.getString(3) +  " password: " + rs.getString(4));
+			System.out.println("id : " + rs.getInt(1) + " customer_name: " + rs.getString(2) + " adress: "
+			+ rs.getString(3) +  " email: " + rs.getString(4) + " ph_no: " + rs.getString(5) + " meter no: "+ rs.getInt(6)
+			 + " Customer_id : "+ rs.getInt(7)+  " location: " + rs.getString(8) + " date : " + rs.getString(9) +" Status: " + rs.getString(10));
 			}
 			con.close();
 			} catch(Exception e)
