@@ -1,0 +1,33 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Add_new_customerService WSDL service -->
+
+  <service name="Add_new_customer" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="Add_new_customerService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="Add_new_customer"/>
+      <parameter name="className" value="main.Add_new_customerSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Add_new_customer"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="add_customerinfo" qname="operNS:add_customerinfo" xmlns:operNS="http://main" soapAction="" >
+        <parameter qname="pns:customer_id" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:customer_name" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:adress" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:email" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ph_no" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="add_customerinfo"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="add_customerinfo">
+    <complexType>
+     <sequence>
+      <element name="customer_id" type="xsd:int"/>
+      <element name="customer_name" type="xsd:string"/>
+      <element name="adress" type="xsd:string"/>
+      <element name="email" type="xsd:string"/>
+      <element name="ph_no" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="add_customerinfoResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="add_customerinfoRequest">
+
+      <wsdl:part element="impl:add_customerinfo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="add_customerinfoResponse">
+
+      <wsdl:part element="impl:add_customerinfoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Add_new_customer">
+
+      <wsdl:operation name="add_customerinfo">
+
+         <wsdl:input message="impl:add_customerinfoRequest" name="add_customerinfoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:add_customerinfoResponse" name="add_customerinfoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Add_new_customerSoapBinding" type="impl:Add_new_customer">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="add_customerinfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="add_customerinfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="add_customerinfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Add_new_customerService">
+
+      <wsdl:port binding="impl:Add_new_customerSoapBinding" name="Add_new_customer">
+
+         <wsdlsoap:address location="http://localhost:8080/Bill_Calculation_project/services/Add_new_customer"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
