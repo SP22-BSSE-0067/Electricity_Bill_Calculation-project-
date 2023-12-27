@@ -18,29 +18,11 @@ public class Add_new_customer {
 			
 		
 			con.close();
-			//return user_info;
 		}
-		
 		catch(Exception e)
 		{
-		System.out.println(e);
+			System.out.println(e);
 		}
 	
 	}
-	
-
-	}
-
-
-
-
-
-
-	
-
-	
-	
-		
-
-	
-
+}

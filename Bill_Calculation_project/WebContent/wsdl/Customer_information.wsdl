@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getcustomer_info">
+    <complexType>
+     <sequence>
+      <element name="customer_name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getcustomer_infoResponse">
+    <complexType>
+     <sequence>
+      <element name="getcustomer_infoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getcustomer_infoRequest">
+
+      <wsdl:part element="impl:getcustomer_info" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getcustomer_infoResponse">
+
+      <wsdl:part element="impl:getcustomer_infoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Customer_information">
+
+      <wsdl:operation name="getcustomer_info">
+
+         <wsdl:input message="impl:getcustomer_infoRequest" name="getcustomer_infoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getcustomer_infoResponse" name="getcustomer_infoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Customer_informationSoapBinding" type="impl:Customer_information">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getcustomer_info">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getcustomer_infoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getcustomer_infoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Customer_informationService">
+
+      <wsdl:port binding="impl:Customer_informationSoapBinding" name="Customer_information">
+
+         <wsdlsoap:address location="http://localhost:8080/Bill_Calculation_project/services/Customer_information"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

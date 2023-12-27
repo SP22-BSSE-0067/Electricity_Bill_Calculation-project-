@@ -30,9 +30,7 @@ public class Customer_information{
 			}
 
 	return "";
-	
-	
 	}
-	}
+}
 	
 

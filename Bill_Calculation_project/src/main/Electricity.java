@@ -5,7 +5,6 @@ import java.sql.*;
 public class Electricity {
 
 	public static void main(String[] args) {
-		//TODO Auto-generated method stub
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con =
@@ -21,7 +20,6 @@ public class Electricity {
 			+ " date : " + rs.getString(9) +" Status: " + rs.getString(10));
 			}
 			con.close();
-			
 			} catch(Exception e)
 			{
 			System.out.println(e);
