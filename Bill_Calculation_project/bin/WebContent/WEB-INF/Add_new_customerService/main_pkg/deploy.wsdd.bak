@@ -1,0 +1,30 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Add_new_customerService WSDL service -->
+
+  <service name="Add_new_customer" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="Add_new_customerService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="Add_new_customer"/>
+      <parameter name="className" value="main_pkg.Add_new_customerSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Add_new_customer"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="main" qname="operNS:main" xmlns:operNS="http://main" soapAction="" >
+      </operation>
+      <operation name="creating_user" qname="operNS:creating_user" xmlns:operNS="http://main" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="creating_user main"/>
+
+  </service>
+</deployment>
