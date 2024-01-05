@@ -1,7 +1,7 @@
 package main;
 
 import java.sql.*;
-
+//
 public class Add_new_customer {
 
 	public void add_customerinfo(int customer_id, String customer_name, String adress, String email, String ph_no) {

@@ -1,7 +1,7 @@
 package main;
 
 import java.sql.*;
-
+//
 public class Electricity {
 
 	public static void main(String[] args) {
