@@ -1,7 +1,7 @@
 package main;
 
 import java.sql.*;
-//
+
 public class Customer_information{
 	public String getcustomer_info(String customer_name) {
 	
