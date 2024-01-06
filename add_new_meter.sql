@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2023 at 11:15 AM
+-- Generation Time: Jan 04, 2024 at 06:59 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -54,7 +54,7 @@ CREATE TABLE `consumption_data` (
   `Data_id` int(11) NOT NULL,
   `Meter_No` int(11) NOT NULL,
   `Month_Year` varchar(45) NOT NULL,
-  `Unit Consumption` int(11) NOT NULL,
+  `Unit_Consumption` int(11) NOT NULL,
   `ToTal_Amount` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -62,7 +62,7 @@ CREATE TABLE `consumption_data` (
 -- Dumping data for table `consumption_data`
 --
 
-INSERT INTO `consumption_data` (`Data_id`, `Meter_No`, `Month_Year`, `Unit Consumption`, `ToTal_Amount`) VALUES
+INSERT INTO `consumption_data` (`Data_id`, `Meter_No`, `Month_Year`, `Unit_Consumption`, `ToTal_Amount`) VALUES
 (1, 23456, 'January-2023', 300, NULL),
 (2, 34567, 'March-2023', 280, NULL),
 (3, 45678, 'December-2023', 240, NULL);

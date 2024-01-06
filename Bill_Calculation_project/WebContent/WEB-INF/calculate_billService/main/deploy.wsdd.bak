@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from calculate_billService WSDL service -->
+
+  <service name="calculate_bill" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="calculate_billService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="calculate_bill"/>
+      <parameter name="className" value="main.Calculate_billSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="calculate_bill"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="calculate_billing" qname="operNS:calculate_billing" xmlns:operNS="http://main" returnQName="retNS:calculate_billingReturn" xmlns:retNS="http://main" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:Meter_No" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="calculate_billing"/>
+
+  </service>
+</deployment>
