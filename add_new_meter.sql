@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2024 at 06:59 PM
+-- Generation Time: Jan 13, 2024 at 06:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -54,7 +54,7 @@ CREATE TABLE `consumption_data` (
   `Data_id` int(11) NOT NULL,
   `Meter_No` int(11) NOT NULL,
   `Month_Year` varchar(45) NOT NULL,
-  `Unit_Consumption` int(11) NOT NULL,
+  `Unit Consumption` int(11) NOT NULL,
   `ToTal_Amount` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -62,7 +62,7 @@ CREATE TABLE `consumption_data` (
 -- Dumping data for table `consumption_data`
 --
 
-INSERT INTO `consumption_data` (`Data_id`, `Meter_No`, `Month_Year`, `Unit_Consumption`, `ToTal_Amount`) VALUES
+INSERT INTO `consumption_data` (`Data_id`, `Meter_No`, `Month_Year`, `Unit Consumption`, `ToTal_Amount`) VALUES
 (1, 23456, 'January-2023', 300, NULL),
 (2, 34567, 'March-2023', 280, NULL),
 (3, 45678, 'December-2023', 240, NULL);
@@ -89,7 +89,8 @@ INSERT INTO `customer` (`customer_id`, `customer_name`, `adress`, `email`, `ph_n
 (1, 'Zaheer-ud-din', 'Nazmabad', 'zaheer234@gmail.com', '0315-675476'),
 (2, 'Anwar Jamel', 'Gulistan-e-johar', 'anwar786@gmail.com', '0345-286754'),
 (3, 'Zeeshan Ahmed', 'Shahra-e-Faisal', 'zeeshan67@gmail.com', '0325-5366357'),
-(6, 'sadia', 'nazimabad', 'sadia123', '034569078');
+(4, 'Zamin', 'Mehmoodabad', 'zamin34@gmail.com', '0344-764485'),
+(5, 'Saleem', 'Johar', 'saleem23@gmail.com', '0435-6473488');
 
 -- --------------------------------------------------------
 
@@ -110,9 +111,11 @@ CREATE TABLE `meter_data` (
 --
 
 INSERT INTO `meter_data` (`Meter_no`, `Customer_Id`, `Location`, `Installation_Date`, `Status`) VALUES
+(10789, 5, 'Block B, Basement', '2023-10-01', 'Active'),
 (23456, 1, '24 main street', '2023-12-03', 'Active'),
 (34567, 3, 'ground floor,room1', '2023-11-05', 'Active'),
-(45678, 2, 'Building A, Basement', '2022-12-10', 'Active');
+(45678, 2, 'Building A, Basement', '2022-12-10', 'Active'),
+(67891, 4, 'NIPA street', '2023-12-01', '');
 
 --
 -- Indexes for dumped tables
