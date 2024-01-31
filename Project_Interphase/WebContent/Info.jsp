@@ -6,6 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Customer Information</title>
+<style>
+ body{
+  background-color: #9dcfda;
+ }
+</style>
 </head>
 <body>
 <h1>Customer Information</h1>
